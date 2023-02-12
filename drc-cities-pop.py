@@ -8,7 +8,7 @@ drc = pd.read_csv('drc_cities_pop.csv')
 # st.write(drc.columns)
 # Rename the columns
 #covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%Y-%m-%d')
-city_options = covid['City'].unique().tolist()
+city_options = drc['City'].unique().tolist()
 st.write(drc)
 
 year_options = drc['Year'].unique().tolist()
