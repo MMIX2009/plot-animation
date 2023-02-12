@@ -17,6 +17,9 @@ st.write(fig)
 # COVID-19 data Plot
 covid = pd.read_csv('https://raw.githubusercontent.com/shinokada/covid-19-stats/master/data/daily-new-confirmed-cases-of-covid-19-tests-per-case.csv')
 st.write(covid.columns)
+# Rename the columns
+df.rename(columns={'Daily confirmed cases (7-day average)': 'Confirmed', 'Days since confirmed cases first reached 30 per day': 'Days since confirmed'}, inplace=True)
+
 #covid.columns = ['Entity', 'Code', 'Date', 'Confirmed' 'Days since confirmed']
 #covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%Y-%m-%d')
 #country_options = covid['Country'].unique().tolist()
