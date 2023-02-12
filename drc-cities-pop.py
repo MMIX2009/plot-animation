@@ -30,5 +30,5 @@ st.write(fig)
 
 fig2 = px.scatter(drc, x="Population", y="Growth-Rate", size="Population", color="City", hover_name="City", log_x=True, size_max=100, range_x=[2000,18000000],
                 animation_frame="Year", animation_group="City")
-fig2.update_layout(width=800, range_y=[min_y,max_y],)
+fig2.update_layout(width=800, range_y=[min_y,max_y])
 st.write(fig2)
