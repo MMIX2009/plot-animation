@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# gapmider GDP data Plot
+st.header('Life Expectancy')
 df = px.data.gapminder()
 st.write(df)
 
-# gapmider GDP data Plot
 year_options = df['year'].unique().tolist()
 year = st.selectbox('Which year do you want to see?' , year_options, 0)
 df = df[df['year']==year]
@@ -15,6 +16,7 @@ fig.update_layout(width=800)
 st.write(fig)
 
 # COVID-19 data Plot
+st.header('COVID-19 data')
 covid = pd.read_csv('https://raw.githubusercontent.com/shinokada/covid-19-stats/master/data/daily-new-confirmed-cases-of-covid-19-tests-per-case.csv')
 # st.write(covid.columns)
 # Rename the columns
