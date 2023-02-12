@@ -26,7 +26,7 @@ fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 5
 fig.update_layout(width=800)
 st.write(fig)
 
-fig2 = px.scatter(drc, x="Population", y="Growth-Rate", size="Population", color="City", hover_name="City", log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90],
+fig2 = px.scatter(drc, x="Population", y="Growth-Rate", size="Population", color="City", hover_name="City", log_x=True, size_max=55, range_x=[0,18000000], range_y=[0,1],
                 animation_frame="Year", animation_group="City")
 fig2.update_layout(width=800)
 st.write(fig2)
