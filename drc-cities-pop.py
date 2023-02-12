@@ -18,7 +18,7 @@ city = st.multiselect('Which city would you like to see?', city_options, ['Kinsh
 drc = drc[drc['City'].isin(city)]
 # drc = drc[drc['Year']==year]
 
-fig = px.bar(drc, x="City", y="Population", color="City", range_y=[0,18000000],
+fig = px.bar(drc, x="City", y="Population", color="City", range_y=[0,3000000],
              animation_frame="Year", animation_group="City")
 
 fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 30
