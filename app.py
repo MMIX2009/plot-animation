@@ -25,7 +25,7 @@ st.write(covid)
 
 
 date_options = covid['Date'].unique().tolist()
-date = st.selectbox('Which date would you like to see?', date_options, 2020-01-10)
+date = st.selectbox('Which date would you like to see?', date_options, 100)
 country = st.selectbox('Which country would you like to see?', country_options, ['Brazil'])
                                                                                  
 covid = covid[covid['Country'].isin(country)]
