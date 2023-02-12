@@ -16,14 +16,14 @@ st.write(fig)
 
 # COVID-19 data Plot
 covid = pd.read_csv('https://raw.githubusercontent.com/shinokada/covid-19-stats/master/data/daily-new-confirmed-cases-of-covid-19-tests-per-case.csv')
-st.write(covid.columns)
+# st.write(covid.columns)
 # Rename the columns
 covid.rename(columns={'Entity': 'Country', 'Daily confirmed cases (7-day average)': 'Confirmed', 'Days since confirmed cases first reached 30 per day': 'Days since confirmed'}, inplace=True)
 covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%Y-%m-%d')
 country_options = covid['Country'].unique().tolist()
 st.write(covid)
 
-'''
+
 date_options = covid['Date'].unique().tolist()
 date = st.selectbox('Which date would you like to see?', date_options, 100)
 country = st.selectbox('Which country would you like to see?', country_options, ['Brazil'])
@@ -34,6 +34,6 @@ covid = covid[covid['Date']==date]
 fig2 = px.bar(covid, x="Country", y="Confirmed", color="Country", range_y=[0,35000])
 fig2.update_layout(width=800)
 st.write(fig2)
-'''
+
                                                                                 
 
