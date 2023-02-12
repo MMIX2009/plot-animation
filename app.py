@@ -28,7 +28,7 @@ st.write(covid)
 
 date_options = covid['Date'].unique().tolist()
 date = st.selectbox('Which date would you like to see?', date_options)
-country = st.multiselect('Which country would you like to see?', country_options, ['Brazil'])
+country = st.multiselect('Which country would you like to see?', country_options, ['United States', 'India', 'France'])
                                                                                  
 covid = covid[covid['Country'].isin(country)]
 covid = covid[covid['Date']==date]
