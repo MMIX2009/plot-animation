@@ -6,7 +6,7 @@ df = px.data.gapminder()
 st.write(df)
 
 # gapmider GDP data Plot
-your_options = df['year'].unique().tolist()
+year_options = df['year'].unique().tolist()
 year = st.selectbox('Which year do you want to see?' , year_options, 0)
 df = df[df['year']==year]
 
