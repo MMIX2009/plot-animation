@@ -13,3 +13,23 @@ df = df[df['year']==year]
 fig = px.scatter(df, x="gdpPercap", y="lifeExp", size="pop", color="continent", hover_name="country", log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])
 fig.update_layout(width=800)
 st.write(fig)
+
+# COVID-19 data Plot
+covid = pd.read-csv()
+covid.columns = ['Country', 'Code', 'Date', 'Confirmed' 'Days since confirmed']
+covid['Date'] = pd.to_datetime(covid['Date']).dt.strftime('%Y-%m-%d')
+country_options = covid['Country'].unique().tolist()
+st.write(covid)
+
+date-options = covid['Date'].unique().tolist()
+date = st.selectbox('Which date would you like to see?', date_options, 100)
+country = st.selectbox('Which country would you like to see?', country_options, ['Brazil')
+                                                                                 
+covid = covid[covid['Country'].isin(country)]
+covid =covid[covid['Date']==date]
+
+fig2 = px.bar(covid, x="Country", y="Confirmed, color="Country", range_y=[0,35000])
+fig2.update_layout(width=800)
+st.write(fig2)
+                                                                                
+
