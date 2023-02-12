@@ -20,7 +20,7 @@ drc = drc[drc['City'].isin(city)]
 max_y = drc['Population'].max()
 min_y = drc['Population'].min()
 
-fig = px.bar(drc, x="City", y="Population", color="City", range_y=[2000,18000000],
+fig = px.bar(drc, x="City", y="Population", color="City", range_y=[min_y,max_y],
              animation_frame="Year", animation_group="City")
 
 fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 30
@@ -28,7 +28,10 @@ fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 5
 fig.update_layout(width=800)
 st.write(fig)
 
-fig2 = px.scatter(drc, x="Population", y="Growth-Rate", size="Population", color="City", hover_name="City", log_x=True, size_max=100, range_x=[2000,18000000], range_y=[min_y,max_y],
+max_yy = drc['Growth-Rate'].max()
+min_yy = drc['Growth-Rate'].min()
+
+fig2 = px.scatter(drc, x="Population", y="Growth-Rate", size="Population", color="City", hover_name="City", log_x=True, size_max=100, range_x=[min_y,max_y], range_y=[min_yy,max_yy],
                 animation_frame="Year", animation_group="City")
 fig2.update_layout(width=800)
 st.write(fig2)
